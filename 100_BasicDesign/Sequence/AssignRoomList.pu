@@ -1,0 +1,20 @@
+@startuml
+
+title 部屋割り登録
+
+autonumber
+
+actor 幹事 #Red
+participant LINE #Lime
+participant Fアサイン #Aqua
+participant F部屋割り登録 #Aqua
+database DB #DarkCyan
+
+幹事 -> LINE : 部屋割り登録
+LINE -> Fアサイン : Webhook
+Fアサイン -> F部屋割り登録 : 部屋割り登録処理
+F部屋割り登録 -> DB : 部屋割り情報登録
+LINE <- F部屋割り登録 : Reply
+幹事 <- LINE : Reply
+
+@enduml

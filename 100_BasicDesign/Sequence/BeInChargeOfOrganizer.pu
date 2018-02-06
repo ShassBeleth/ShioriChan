@@ -1,0 +1,39 @@
+@startuml
+
+title 幹事ユーザ追加
+
+autonumber
+
+actor 参加者 #MediumSpringGreen
+actor 幹事 #Red
+participant LINE #Lime
+participant Fアサイン #Aqua
+participant F仮登録 #Aqua
+participant F仮登録通知 #Aqua
+participant F本登録 #Aqua
+participant F本登録通知 #Aqua
+database DB #DarkCyan
+
+参加者 -> LINE : 幹事申込
+LINE -> Fアサイン : Webhook
+Fアサイン -> F仮登録 : 仮登録処理
+F仮登録 -> DB : ユーザ情報登録
+LINE <- F仮登録 : Reply
+参加者 <- LINE : Reply
+
+F仮登録通知 <- DB : Insert Trigger
+LINE <- F仮登録通知 : Push
+幹事 <- LINE : Push
+
+幹事 -> LINE : 幹事申込承認／拒否
+LINE -> Fアサイン : Webhook
+Fアサイン -> F本登録 : 仮登録処理
+F本登録 -> DB : ユーザ情報登録
+LINE <- F本登録 : Reply
+幹事 <- LINE : Reply
+
+F本登録通知 <- DB : Insert Trigger
+LINE <- F本登録通知 : Push
+参加者 <- LINE : Push
+
+@enduml

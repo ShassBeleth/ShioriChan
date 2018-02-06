@@ -1,0 +1,26 @@
+@startuml
+
+title 参加者追加
+
+autonumber
+
+actor 参加者 #MediumSpringGreen
+actor 幹事 #Red
+participant LINE #Lime
+participant Fアサイン #Aqua
+participant F参加 #Aqua
+participant F参加通知 #Aqua
+database DB #DarkCyan
+
+参加者 -> LINE : 参加申込
+LINE -> Fアサイン : Webhook
+Fアサイン -> F参加 : 参加処理
+F参加 -> DB : ユーザ情報登録
+LINE <- F参加 : Reply
+参加者 <- LINE : Reply
+
+F参加通知 <- DB : Insert Trigger
+LINE <- F参加通知 : Push
+幹事 <- LINE : Push
+
+@enduml

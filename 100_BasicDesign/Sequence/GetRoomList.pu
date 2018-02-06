@@ -1,0 +1,20 @@
+@startuml
+
+title 部屋情報取得
+
+autonumber
+
+actor 参加者 #MediumSpringGreen
+participant LINE #Lime
+participant Fアサイン #Aqua
+participant F部屋情報取得 #Aqua
+database DB #DarkCyan
+
+参加者 -> LINE : 部屋情報取得
+LINE -> Fアサイン : Webhook
+Fアサイン -> F部屋情報取得 : 部屋情報取得
+F部屋情報取得 -> DB : 部屋情報取得
+LINE <- F部屋情報取得 : Reply
+参加者 <- LINE : Reply
+
+@enduml
