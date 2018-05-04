@@ -1,0 +1,94 @@
+﻿# A5:ER FORMAT:10
+# A5:ER ENCODING:UTF8
+# A5:ER Mk-1 Copyright (C)2007 m.matsubara
+# A5:SQL Mk-2 Copyright (C)1997 m.matsubara
+#  http://www.wind.sannet.ne.jp/m_matsu/developer/a5m2/
+
+[Manager]
+ProjectName=ShioriChan
+Author=
+MaxEntityRowShow=1000
+ReadOnlyRecommend=0
+Page=Main
+PageInfo="Main",2,"A3Landscape",$FFFFFF
+LogicalView=1
+DecodeDomain=0
+ViewModePageIndividually=1
+ViewMode=2
+ViewFormat=0
+UseNondependenceDashLine=0
+FontName=Tahoma
+FontSize=6
+PaperSize=A4Landscape
+HeaderLeft=
+HeaderCenter=
+HeaderRight=
+FooterLeft=
+FooterCenter=
+FooterRight=
+ShowPageoutRelation=1
+RDBMSType=4
+RDBMSTypeName=Microsoft SQL Server 2008
+DefaultPkName=%0:s_PKC
+DefaultPkIndexName=%0:s_PKI
+DefaultIndexName=%0:s_IX%1:d
+DefaultFkName=%0:s_FK%1:d
+SqlSeparator=0
+ShowTag=1
+ShowCommonAttributes=0
+
+[Entity]
+PName=M_ADMIN
+LName=管理者情報
+Comment=
+TableOption=
+Page=Main
+Left=750
+Top=1000
+Field="管理者管理番号","ADMIN_SEQ","@INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="ユーザID","USER_ID","@VARCHAR","NOT NULL",,"","",$FFFFFFFF,""
+Field="ユーザ名","USER_NAME","@VARCHAR","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20180505032536
+Position="Main",750,1000
+
+[Entity]
+PName=T_SCHEDULE
+LName=スケジュール
+Comment=
+TableOption=
+Page=MAIN
+Left=1250
+Top=500
+Field="スケジュール管理番号","SCHEDULE_SEQ","@INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="スケジュール名","NAME","@VARCHAR","NOT NULL",,"","",$FFFFFFFF,""
+Field="開始時間","START_TIME","@TIME","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20180505032639
+Position="MAIN",1250,500,357,110
+
+[Entity]
+PName=T_USER
+LName=ユーザ情報
+Comment=
+TableOption=
+Page=MAIN
+Left=650
+Top=500
+Field="ユーザ管理番号","USER_SEQ","@INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="ユーザID","USER_ID","@VARCHAR",,,"","",$FFFFFFFF,""
+Field="苗字の頭文字","LAST_NAME_HEAD","@VARCHAR","NOT NULL",,"","",$FFFFFFFF,""
+Field="ユーザ名","NAME","@VARCHAR","NOT NULL",,"","",$FFFFFFFF,""
+Field="部屋番号","ROOM_NUMBER","@VARCHAR","NOT NULL",,"","",$FFFFFFFF,""
+Field="部屋の鍵を持っているかどうか","IS_HAVING_KEY","@INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="一日目イベント","FIRST_EVENT","@VARCHAR","NOT NULL",,"","",$FFFFFFFF,""
+Field="二日目イベント","SECOND_EVENT","@VARCHAR","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20180505004529
+Position="MAIN",650,500,402,206
