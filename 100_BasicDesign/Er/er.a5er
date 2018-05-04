@@ -38,6 +38,24 @@ ShowTag=1
 ShowCommonAttributes=0
 
 [Entity]
+PName=PUSH_TABLE
+LName=プッシュ通知テーブル
+Comment=
+TableOption=
+Page=Main
+Left=1300
+Top=950
+Field="プッシュ管理番号","PUSH_SEQ","@INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="通知者名","REGISTER_NAME","@VARCHAR",,,"","",$FFFFFFFF,""
+Field="通知内容","NOTIFY_TEXT","@VARCHAR",,,"","",$FFFFFFFF,""
+Field="通知時間","NOTIFY_TIME","@TIME",,,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20180505035615
+Position="Main",1300,950
+
+[Entity]
 PName=M_ADMIN
 LName=管理者情報
 Comment=
